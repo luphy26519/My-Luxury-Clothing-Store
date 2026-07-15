@@ -1,0 +1,3 @@
+/** Applies and persists color-theme preference. */
+(function(){'use strict';const saved=localStorage.getItem('aurelia_theme');const preferred=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';const apply=theme=>{document.documentElement.dataset.theme=theme;localStorage.setItem('aurelia_theme',theme);document.querySelectorAll('[data-theme-toggle]').forEach(b=>{const dark=theme==='dark';b.setAttribute('aria-pressed',String(dark));b.setAttribute('aria-label',`Switch to ${dark?'light':'dark'} mode`);});};apply(saved||preferred);document.addEventListener('click',e=>{if(e.target.closest('[data-theme-toggle]'))apply(document.documentElement.dataset.theme==='dark'?'light':'dark');});})();
+
