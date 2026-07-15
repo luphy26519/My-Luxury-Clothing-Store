@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- ================================================================
+         DOCUMENT METADATA
+         Core metadata, discoverability details, and shared style imports.
+         ================================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maison Aurelia — timeless luxury clothing, crafted with intention and designed for a life beyond seasons.">
+    <meta name="theme-color" content="#f7f4ef">
+    <title>Maison Aurelia | Modern Luxury, Timeless Form</title>
+
+    <!-- Preconnect improves the loading speed of the editorial typefaces. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Italiana&amp;display=swap" rel="stylesheet">
+
+    <!-- Shared styles are separated by responsibility for maintainability. -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Keyboard users can bypass repeated navigation and reach the page. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- ================================================================
+         ANNOUNCEMENT BAR
+         A concise promotional message shown above the primary navigation.
+         ================================================================ -->
+    <aside class="announcement-bar" aria-label="Store announcement">
+        <p>Complimentary worldwide delivery on orders over $500</p>
+        <button class="announcement-bar__close" type="button" aria-label="Dismiss announcement" data-dismiss-announcement>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </aside>
+
+    <!-- ================================================================
+         SITE HEADER
+         Shared glass navigation, search, account actions, and mobile menu.
+         ================================================================ -->
+    <header class="site-header" data-site-header>
+        <div class="container site-header__inner">
+            <button class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-controls="mobile-navigation" aria-expanded="false" data-menu-toggle>
+                <span class="menu-toggle__line" aria-hidden="true"></span>
+                <span class="menu-toggle__line" aria-hidden="true"></span>
+            </button>
+
+            <a class="brand" href="index.html" aria-label="Maison Aurelia home">
+                <span class="brand__mark" aria-hidden="true">MA</span>
+                <span class="brand__name">Maison Aurelia</span>
+            </a>
+
+            <nav class="primary-navigation" aria-label="Primary navigation">
+                <ul class="primary-navigation__list">
+                    <li><a class="is-active" href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-header__actions">
+                <button class="icon-button" type="button" aria-label="Open search" aria-controls="search-panel" aria-expanded="false" data-search-toggle>
+                    <span aria-hidden="true">⌕</span>
+                </button>
+                <a class="icon-button" href="wishlist.html" aria-label="View wishlist">
+                    <span aria-hidden="true">♡</span>
+                    <span class="action-count" data-wishlist-count aria-label="0 wishlist items">0</span>
+                </a>
+                <a class="icon-button" href="cart.html" aria-label="View shopping bag">
+                    <span aria-hidden="true">Bag</span>
+                    <span class="action-count" data-cart-count aria-label="0 cart items">0</span>
+                </a>
+                <a class="admin-link" href="admin.html">Admin</a>
+                <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" data-theme-toggle>
+                    <span class="theme-toggle__sun" aria-hidden="true">☼</span>
+                    <span class="theme-toggle__moon" aria-hidden="true">◐</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Expandable live-search panel shared with the search module. -->
+        <section class="search-panel" id="search-panel" aria-label="Product search" aria-hidden="true" data-search-panel>
+            <div class="container search-panel__inner">
+                <label class="visually-hidden" for="global-search">Search products</label>
+                <input id="global-search" type="search" placeholder="Search garments, collections, and categories…" autocomplete="off" data-global-search>
+                <button class="text-button" type="button" data-search-close>Close</button>
+            </div>
+            <div class="container search-results" role="status" aria-live="polite" data-search-results></div>
+        </section>
+
+        <!-- Mobile drawer mirrors the desktop navigation for small screens. -->
+        <nav class="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation" aria-hidden="true" data-mobile-navigation>
+            <div class="mobile-navigation__header">
+                <span class="brand__name">Maison Aurelia</span>
+                <button class="icon-button" type="button" aria-label="Close navigation" data-menu-close>&times;</button>
+            </div>
+            <ul class="mobile-navigation__list">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="cart.html">Shopping Bag</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+        <button class="drawer-backdrop" type="button" aria-label="Close navigation" tabindex="-1" data-drawer-backdrop></button>
+    </header>
+
+    <main id="main-content">
+        <!-- ============================================================
+             HERO
+             Editorial opening statement with primary shopping actions.
+             ============================================================ -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__media" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="" fetchpriority="high">
+                <div class="hero__overlay"></div>
+            </div>
+            <div class="container hero__content" data-reveal>
+                <p class="eyebrow">Autumn / Winter 2026</p>
+                <h1 id="hero-title">Quiet form.<br><em>Lasting presence.</em></h1>
+                <p class="hero__description">A study in proportion, texture, and restraint—pieces composed for a life beyond seasons.</p>
+                <div class="button-group">
+                    <a class="button button--light" href="shop.html">Explore the collection</a>
+                    <a class="button button--ghost-light" href="#featured-products">Discover new arrivals</a>
+                </div>
+            </div>
+            <a class="hero__scroll" href="#collections" aria-label="Scroll to featured collections">
+                <span>Scroll to discover</span>
+                <span aria-hidden="true">↓</span>
+            </a>
+        </section>
+
+        <!-- ============================================================
+             BRAND STATEMENT
+             A short piece of editorial copy establishes the brand voice.
+             ============================================================ -->
+        <section class="brand-statement section" aria-labelledby="statement-title">
+            <div class="container container--narrow" data-reveal>
+                <p class="eyebrow">The Aurelia philosophy</p>
+                <h2 id="statement-title">Clothing should not ask for attention.<br>It should <em>hold it.</em></h2>
+                <p>We curate expressive essentials and exceptional tailoring from ateliers that share our devotion to material, craft, and considered design.</p>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             FEATURED COLLECTIONS
+             Editorial category tiles link to filtered shop views.
+             ============================================================ -->
+        <section class="collections section" id="collections" aria-labelledby="collections-title">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <div>
+                        <p class="eyebrow">Curated edits</p>
+                        <h2 id="collections-title">Featured collections</h2>
+                    </div>
+                    <a class="arrow-link" href="shop.html?view=collections">View all collections <span aria-hidden="true">→</span></a>
+                </div>
+
+                <div class="collection-grid">
+                    <a class="collection-card collection-card--large" href="shop.html?category=women" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Woman wearing a sculptural neutral coat" loading="lazy">
+                        <span class="collection-card__content">
+                            <span class="eyebrow">Collection 01</span>
+                            <span class="collection-card__title">The feminine form</span>
+                            <span class="collection-card__link">Shop women <span aria-hidden="true">→</span></span>
+                        </span>
+                    </a>
+                    <a class="collection-card" href="shop.html?category=men" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Man in refined monochrome tailoring" loading="lazy">
+                        <span class="collection-card__content">
+                            <span class="eyebrow">Collection 02</span>
+                            <span class="collection-card__title">Modern tailoring</span>
+                            <span class="collection-card__link">Shop men <span aria-hidden="true">→</span></span>
+                        </span>
+                    </a>
+                    <a class="collection-card" href="shop.html?category=accessories" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Minimal leather bag and accessories" loading="lazy">
+                        <span class="collection-card__content">
+                            <span class="eyebrow">Collection 03</span>
+                            <span class="collection-card__title">Objects of desire</span>
+                            <span class="collection-card__link">Shop accessories <span aria-hidden="true">→</span></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             FEATURED PRODUCTS
+             Product cards are rendered by app.js from Local Storage data.
+             ============================================================ -->
+        <section class="featured-products section" id="featured-products" aria-labelledby="featured-products-title">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <div>
+                        <p class="eyebrow">New season</p>
+                        <h2 id="featured-products-title">The latest selection</h2>
+                    </div>
+                    <a class="arrow-link" href="shop.html">Shop all pieces <span aria-hidden="true">→</span></a>
+                </div>
+
+                <!-- JavaScript replaces the loading cards with stored products. -->
+                <div class="product-grid" aria-live="polite" aria-busy="true" data-featured-products>
+                    <article class="product-card product-card--skeleton" aria-hidden="true"></article>
+                    <article class="product-card product-card--skeleton" aria-hidden="true"></article>
+                    <article class="product-card product-card--skeleton" aria-hidden="true"></article>
+                    <article class="product-card product-card--skeleton" aria-hidden="true"></article>
+                </div>
+                <noscript>
+                    <p class="notice">JavaScript is required to browse the live product catalogue.</p>
+                </noscript>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             EDITORIAL FEATURE
+             A full-width campaign promotes the craftsmanship story.
+             ============================================================ -->
+        <section class="editorial-feature" aria-labelledby="editorial-title">
+            <div class="editorial-feature__image" data-reveal>
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Close view of an artisan shaping a tailored garment" loading="lazy">
+            </div>
+            <div class="editorial-feature__content" data-reveal>
+                <p class="eyebrow">Journal No. 07</p>
+                <h2 id="editorial-title">Made slowly.<br>Worn endlessly.</h2>
+                <p>Inside the studios where patient hands, responsible materials, and generations of knowledge shape every line.</p>
+                <a class="arrow-link" href="about.html">Read our story <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             BRAND MARQUEE
+             A curated list of partner houses represented by the store.
+             ============================================================ -->
+        <section class="brand-marquee section" id="brands" aria-labelledby="brands-title">
+            <div class="container" data-reveal>
+                <p class="eyebrow" id="brands-title">Selected houses</p>
+                <ul class="brand-marquee__list" aria-label="Featured brands">
+                    <li>Aurelia</li>
+                    <li>Élan Studio</li>
+                    <li>Forme</li>
+                    <li>Atelier N°7</li>
+                    <li>Vesper</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             NEWSLETTER
+             Client-side form provides validation and accessible feedback.
+             ============================================================ -->
+        <section class="newsletter section" aria-labelledby="newsletter-title">
+            <div class="container container--narrow" data-reveal>
+                <p class="eyebrow">Private correspondence</p>
+                <h2 id="newsletter-title">Enter the world of Aurelia</h2>
+                <p>Receive new collection notes, private previews, and stories from our ateliers.</p>
+                <form class="newsletter-form" data-newsletter-form>
+                    <div class="field">
+                        <label class="visually-hidden" for="newsletter-email">Email address</label>
+                        <input id="newsletter-email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+                        <button type="submit" aria-label="Subscribe to newsletter">Subscribe <span aria-hidden="true">→</span></button>
+                    </div>
+                    <p class="form-message" role="status" aria-live="polite" data-newsletter-message></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================================================================
+         FOOTER
+         Utility links, store information, social links, and legal details.
+         ================================================================ -->
+    <footer class="site-footer">
+        <div class="container site-footer__grid">
+            <div class="site-footer__brand">
+                <a class="brand brand--footer" href="index.html">
+                    <span class="brand__mark" aria-hidden="true">MA</span>
+                    <span class="brand__name">Maison Aurelia</span>
+                </a>
+                <p>Modern luxury, curated with intention.</p>
+            </div>
+            <div>
+                <h2 class="footer-heading">Explore</h2>
+                <ul class="footer-links">
+                    <li><a href="shop.html">New arrivals</a></li>
+                    <li><a href="shop.html?view=collections">Collections</a></li>
+                    <li><a href="shop.html?featured=true">Featured</a></li>
+                    <li><a href="about.html">Our story</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="footer-heading">Client services</h2>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="contact.html#shipping">Delivery &amp; returns</a></li>
+                    <li><a href="contact.html#care">Product care</a></li>
+                    <li><a href="contact.html#faq">Frequently asked</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="footer-heading">Follow</h2>
+                <ul class="footer-links">
+                    <li><a href="#" aria-label="Maison Aurelia on Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="Maison Aurelia on Pinterest">Pinterest</a></li>
+                    <li><a href="#" aria-label="Maison Aurelia on TikTok">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container site-footer__bottom">
+            <p>&copy; <span data-current-year>2026</span> Maison Aurelia. All rights reserved.</p>
+            <div class="site-footer__legal">
+                <a href="settings.html">Privacy</a>
+                <a href="settings.html">Terms</a>
+                <button type="button" data-cookie-settings>Cookie settings</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed utility controls remain accessible across the home page. -->
+    <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- Shared JavaScript modules load in dependency order. -->
+    <script src="js/storage.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/wishlist.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>
