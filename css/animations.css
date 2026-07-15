@@ -1,0 +1,8 @@
+/* Motion utilities respect the user's reduced-motion preference. */
+[data-reveal] { opacity:0; transform:translateY(28px); transition:opacity .75s var(--ease),transform .75s var(--ease); }
+[data-reveal].is-revealed { opacity:1; transform:none; }
+@keyframes slideUp { from { opacity:0; transform:translateY(12px); } }
+@keyframes ripple { to { transform:scale(4); opacity:0; } }
+.button { position:relative; overflow:hidden; }.ripple { position:absolute; width:20px; height:20px; border-radius:50%; background:rgba(255,255,255,.35); transform:scale(0); animation:ripple .6s linear; pointer-events:none; }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } [data-reveal] { opacity:1; transform:none; } }
+
